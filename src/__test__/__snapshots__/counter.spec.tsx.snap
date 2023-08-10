@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Counter  Counter test is render   1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+        "marginTop": "20px",
+      }
+    }
+  >
+    <button
+      id="data-test-increment-btn"
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "blue",
+          "borderRadius": "4px",
+          "color": "white",
+          "display": "flex",
+          "fontSize": "24px",
+          "margin": "auto",
+          "padding": "10px",
+          "textAlign": "center",
+        }
+      }
+    >
+      Increment
+    </button>
+    <div
+      style={
+        Object {
+          "fontSize": "20px",
+          "marginTop": "30px",
+        }
+      }
+    >
+      The Count Value is 
+       
+      0
+    </div>
+  </div>
+</div>
+`;
