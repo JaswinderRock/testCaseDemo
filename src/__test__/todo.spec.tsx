@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from "enzyme"
-import { Login } from "../components/Screen/Login"
 import { debug } from 'console';
+import ToDoClass from '../components/Screen/ToDoClass';
 
-describe("Render login", () => {
-    test(" Login test is render  ", () => {
-        const component = shallow(<Login />)
+describe("Render TodoClass", () => {
+    test("TodoList test is render  ", () => {
+        const component = shallow(<ToDoClass />)
         debug(component)
         console.log(component.debug())
         expect(component).toMatchSnapshot()
