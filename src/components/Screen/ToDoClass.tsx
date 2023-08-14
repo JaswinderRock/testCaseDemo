@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addName } from '../Action/action';
+import { setName } from '../Action/action';
 
 type TodoProps = {
-    addName: (a: string) => void;
+    setName: (a: string) => void;
     reduxList: Array<String>;
 };
 type TodoState = {
@@ -17,7 +17,7 @@ class ToDoClass extends Component<TodoProps, TodoState> {
         if (!this.state.name.trim()) {
             alert("Empty text can't be added into redux");
         }
-        this.props.addName(this.state.name);
+        this.props.setName(this.state.name);
         this.setState({ name: "" });
     };
     render() {
@@ -36,7 +36,7 @@ class ToDoClass extends Component<TodoProps, TodoState> {
                     <button
                         type="button"
                         onClick={this.handleClick}
-                        style={{ height: 45, width: 120, backgroundColor: "red", color: 'white', marginTop: '10px', fontSize: '20px' }}
+                        style={{ height: 45, width: 120, backgroundColor: "blue", color: 'white', marginTop: '10px', fontSize: '20px', borderRadius: '4px' }}
                     >
                         Submit
                     </button>
@@ -54,4 +54,4 @@ class ToDoClass extends Component<TodoProps, TodoState> {
 function mapStateToProps(state: any) {
     return { reduxList: state.nameList };
 }
-export default connect(mapStateToProps, { addName })(ToDoClass);
+export default connect(mapStateToProps, { setName })(ToDoClass);

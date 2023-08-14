@@ -1,28 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { buyCake } from '../Action/cakeAction';
+import { buyCake } from '../Action/action';
 
 type CakeProps = {
-    numOfCakes: Array<number>;
-    // buyCake: (a: string) => void;
+    numOfCakes: number;
+    buyCake: () => void;
 };
 class CakeContainer extends Component<CakeProps>{
     render() {
         return (
-            <div>
-                <h2>Number of Cakes {this.props.numOfCakes}</h2>
-                {/* <button onClick={this.props.buyCake}>Buy Cake</button> */}
+            <div style={{ display: 'flex' }}>
+                <div style={{ margin: 'auto' }}>
+                    <h2>Number of Cakes {this.props.numOfCakes}</h2>
+                    <button style={{ display: 'flex', margin: 'auto', borderRadius: '4px', textAlign: 'center', color: "white", background: 'blue', padding: '10px', fontSize: '24px', }} onClick={this.props.buyCake}>Buy Cake</button>
+                </div>
             </div>
         )
 
     }
 }
 function mapStateToProps(state: any) {
-    return { numOfCakes: state.numOfCakes };
+    return { numOfCakes: state.numberOfCakes };
 }
-// function mapDipatchTpProps() {
-//     return {
-//         buyCake: () => dispatchEvent(buyCake())
-//     };
-// }
-export default connect(mapStateToProps)(CakeContainer);
+export default connect(mapStateToProps, { buyCake })(CakeContainer);

@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render Counter  Counter test is render   1`] = `
+exports[`Render Counter Counter test is render  1`] = `
 <div
+  className="counterwrapper"
   style={
     Object {
       "display": "flex",
@@ -12,11 +13,26 @@ exports[`Render Counter  Counter test is render   1`] = `
     style={
       Object {
         "margin": "auto",
-        "marginTop": "20px",
       }
     }
   >
+    <div
+      className="counterdescription"
+      data-test="counterdescription"
+      style={
+        Object {
+          "marginTop": "30px",
+        }
+      }
+    >
+      <h2>
+        The Count Value is 
+         
+        0
+      </h2>
+    </div>
     <button
+      className="counterBtn"
       id="data-test-increment-btn"
       onClick={[Function]}
       style={
@@ -27,6 +43,7 @@ exports[`Render Counter  Counter test is render   1`] = `
           "display": "flex",
           "fontSize": "24px",
           "margin": "auto",
+          "marginTop": "10px",
           "padding": "10px",
           "textAlign": "center",
         }
@@ -34,18 +51,6 @@ exports[`Render Counter  Counter test is render   1`] = `
     >
       Increment
     </button>
-    <div
-      style={
-        Object {
-          "fontSize": "20px",
-          "marginTop": "30px",
-        }
-      }
-    >
-      The Count Value is 
-       
-      0
-    </div>
   </div>
 </div>
 `;

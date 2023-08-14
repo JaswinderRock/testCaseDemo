@@ -15,12 +15,12 @@ export class Counter extends Component<CounterProps, CounterState> {
     }
     render() {
         return (
-            <div style={{ display: 'flex' }}>
-                <div style={{ margin: 'auto', marginTop: '20px' }}>
-                    <button id={"data-test-increment-btn"} style={{ display: 'flex', margin: 'auto', borderRadius: '4px', textAlign: 'center', color: "white", background: 'blue', padding: '10px', fontSize: '24px', }} onClick={this.handleClick}>Increment</button>
-                    <div style={{ marginTop: '30px', fontSize: '20px' }}>
-                        {this.props.message} {this.state.count}
+            <div className="counterwrapper" style={{ display: 'flex' }}>
+                <div style={{ margin: 'auto' }}>
+                    <div data-test='counterdescription' className="counterdescription" style={{ marginTop: '30px' }}>
+                        <h2 >{this.props.message} {this.state.count}</h2> 
                     </div>
+                    <button className="counterBtn" id={"data-test-increment-btn"} style={{ display: 'flex', margin: 'auto', borderRadius: '4px', marginTop: '10px', textAlign: 'center', color: "white", background: 'blue', padding: '10px', fontSize: '24px', }} onClick={this.handleClick}>Increment</button>
                 </div>
             </div>
         )

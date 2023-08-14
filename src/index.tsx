@@ -5,9 +5,9 @@ import { App } from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { Store } from './components/Store/store';
-import { incrementStore } from './components/Store/store';
+
 ReactDOM.render(
-    <Provider store={incrementStore}>
+    <Provider store={Store}>
         <BrowserRouter>
             <App />
         </BrowserRouter>

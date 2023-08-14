@@ -19,14 +19,15 @@ class Login extends React.Component<TypeProps, TypeState> {
     render() {
         const { email, password, remeberMe } = this.state;
         return (
-            <div style={{ display: 'flex' }}>
-                <form onSubmit={this.onSubmit} style={{ margin: 'auto', padding: '40px', marginTop: '50px', background: '#dadada', border: '2px solid #0000FF ', color: 'blue' }}>
-                    <h3 style={{ fontSize: '24px' }} id='test-id-login'>Login</h3>
-                    <div>
+            <div className='wrapper-div' style={{ display: 'flex' }}>
+                <form className="login-form" onSubmit={this.onSubmit} style={{ margin: 'auto', padding: '40px', marginTop: '50px', background: '#dadada', border: '2px solid #0000FF ', color: 'blue' }}>
+                    <h3 className='Login-label' style={{ fontSize: '24px' }} id='test-id-login'>Login</h3>
+                    <div className='email-wrapper'>
                         <label style={{ fontSize: '20px' }}>Email *</label>
                         <br />
                         <input
-                            test-id='data-test-email'
+                            className='email-input'
+                            id='data-test-email'
                             style={{ marginTop: '10px', height: '3vh' }}
                             placeholder='Please enter  your email'
                             type='email'
@@ -39,6 +40,7 @@ class Login extends React.Component<TypeProps, TypeState> {
                         <label style={{ fontSize: '20px' }}>Password *</label>
                         <br />
                         <input
+                            className='password-input'
                             style={{ marginTop: '10px', height: '3vh' }}
                             placeholder='Please enter your password'
                             type='password'
@@ -47,19 +49,19 @@ class Login extends React.Component<TypeProps, TypeState> {
                         />
                     </div>
                     <br />
-                    <div>
+                    <div className='wrapper-checkbox'>
                         <label >
-                            <input type='checkbox'
+                            <input
+                                type='checkbox'
                                 checked={remeberMe}
                                 onChange={e => this.setState({ remeberMe: e.target.checked })}
                             />
                             Remeber me ?
                         </label>
-
                     </div>
                     <br />
                     <div>
-                        <button type='submit' role='button' id="submit-button" style={{ color: 'white', background: 'blue', marginTop: '16px', height: '5vh', width: '60%' }}>Submit</button>
+                        <button type='submit' className="submit-button" style={{ color: 'white', background: 'blue', marginTop: '16px', height: '5vh', width: '60%' }}>Submit</button>
                     </div>
                 </form>
                 {/* <div>{this.state.email}</div> */}

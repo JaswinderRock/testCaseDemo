@@ -10,7 +10,6 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <h1>hello hello</h1>
         <Routes>
           <Route path='login' element={< Login />} />
           <Route path='counter' element={<Counter message={`The Count Value is `} />} />
@@ -20,7 +19,6 @@ export class App extends Component {
         </Routes>
         <nav>
           <ul>
-            <h1>React with TypeSript </h1>
             <li>
               <Link style={{ fontSize: '24px' }} to="counter">Counter</Link>
             </li>
@@ -28,13 +26,13 @@ export class App extends Component {
               <Link style={{ fontSize: '24px' }} to="cake">CakeContainor</Link>
             </li>
             <li>
-              <Link style={{ fontSize: '24px' }} to="login">Login</Link>
-            </li>
-            <li>
               <Link style={{ fontSize: '24px' }} to="todoList">ToDoList</Link>
             </li>
             <li>
               <Link style={{ fontSize: '24px' }} to="increment">Increment</Link>
+            </li>
+            <li>
+              <Link style={{ fontSize: '24px' }} to="login">Login</Link>
             </li>
           </ul>
         </nav>

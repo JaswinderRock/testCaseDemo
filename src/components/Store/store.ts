@@ -1,6 +1,4 @@
 import { createStore } from 'redux';
-import { cakeReducer } from '../Reducer/cakeReducer';
-import reducer from '../Reducer/incrementReducer';
+import reducer from '../Reducer/reducer';
 
-export const incrementStore = createStore(reducer)
-export const Store = createStore(cakeReducer);
+export const Store = createStore(reducer);

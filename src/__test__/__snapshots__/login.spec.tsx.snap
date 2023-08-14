@@ -2,6 +2,7 @@
 
 exports[`Render Login Login test is render 1`] = `
 <div
+  className="wrapper-div"
   style={
     Object {
       "display": "flex",
@@ -9,6 +10,7 @@ exports[`Render Login Login test is render 1`] = `
   }
 >
   <form
+    className="login-form"
     onSubmit={[Function]}
     style={
       Object {
@@ -22,6 +24,7 @@ exports[`Render Login Login test is render 1`] = `
     }
   >
     <h3
+      className="Login-label"
       id="test-id-login"
       style={
         Object {
@@ -31,7 +34,9 @@ exports[`Render Login Login test is render 1`] = `
     >
       Login
     </h3>
-    <div>
+    <div
+      className="email-wrapper"
+    >
       <label
         style={
           Object {
@@ -43,6 +48,8 @@ exports[`Render Login Login test is render 1`] = `
       </label>
       <br />
       <input
+        className="email-input"
+        id="data-test-email"
         onChange={[Function]}
         placeholder="Please enter  your email"
         style={
@@ -51,7 +58,6 @@ exports[`Render Login Login test is render 1`] = `
             "marginTop": "10px",
           }
         }
-        test-id="data-test-email"
         type="email"
         value=""
       />
@@ -69,6 +75,7 @@ exports[`Render Login Login test is render 1`] = `
       </label>
       <br />
       <input
+        className="password-input"
         onChange={[Function]}
         placeholder="Please enter your password"
         style={
@@ -82,7 +89,9 @@ exports[`Render Login Login test is render 1`] = `
       />
     </div>
     <br />
-    <div>
+    <div
+      className="wrapper-checkbox"
+    >
       <label>
         <input
           checked={true}
@@ -95,8 +104,7 @@ exports[`Render Login Login test is render 1`] = `
     <br />
     <div>
       <button
-        id="submit-button"
-        role="button"
+        className="submit-button"
         style={
           Object {
             "background": "blue",

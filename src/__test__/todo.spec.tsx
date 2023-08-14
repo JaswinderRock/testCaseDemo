@@ -7,7 +7,6 @@ describe("Render TodoClass", () => {
     test("TodoList test is render  ", () => {
         const component = shallow(<ToDoClass />)
         debug(component)
-        console.log(component.debug())
         expect(component).toMatchSnapshot()
     })
 })
