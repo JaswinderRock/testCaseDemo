@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setName } from '../Action/action';
+import { State } from '../Reducer/reducer';
 
 type TodoProps = {
     setName: (a: string) => void;
@@ -51,7 +52,7 @@ class ToDoClass extends Component<TodoProps, TodoState> {
         );
     }
 }
-function mapStateToProps(state: any) {
+function mapStateToProps(state: State) {
     return { reduxList: state.nameList };
 }
 export default connect(mapStateToProps, { setName })(ToDoClass);

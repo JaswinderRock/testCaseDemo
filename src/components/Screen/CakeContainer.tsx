@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { buyCake } from '../Action/action';
+import { State } from '../Reducer/reducer';
 
 type CakeProps = {
     numOfCakes: number;
@@ -19,7 +20,7 @@ class CakeContainer extends Component<CakeProps>{
 
     }
 }
-function mapStateToProps(state: any) {
+function mapStateToProps(state: State) {
     return { numOfCakes: state.numberOfCakes };
 }
 export default connect(mapStateToProps, { buyCake })(CakeContainer);

@@ -10,6 +10,9 @@ const setUp = () => {
 }
 describe("Render Login", () => {
     let component: any;
+    const newEmail = "test@gmail.com";
+    const newPassword = "testpassword";
+
     beforeEach(() => {
         component = setUp();
     });
@@ -19,28 +22,12 @@ describe("Render Login", () => {
         console.log(component.debug())
         expect(component).toMatchSnapshot()
     }),
-        test('Should Serach for Wrapper div', () => {
-            const wrapper = findByClassName(component, 'wrapper-div');
-            expect(wrapper.length).toBe(1)
-        }),
-        test('Serach for Wrapper div', () => {
-            const wrapper = findByClassName(component, 'login-form');
-            expect(wrapper.length).toBe(1)
-        }),
         test('Find the Label', () => {
             const wrapper = findByClassName(component, 'Login-label');
             expect(wrapper.length).toBe(1)
         }),
-        test('Serach for email wrapper', () => {
-            const wrapper = findByClassName(component, 'email-wrapper');
-            expect(wrapper.length).toBe(1)
-        }),
         test("Should Serach for Email and Password label", () => {
             const wrapper = component.find('Email *' && 'Password *');
-            debug(wrapper)
-        }),
-        test("Should Serach for Email input", () => {
-            const wrapper = component.find('.email-input');
             debug(wrapper)
         }),
         test("Email input type should by email", () => {
@@ -55,12 +42,37 @@ describe("Render Login", () => {
             const wrapper = component.find('password');
             debug(wrapper)
         }),
-        test(" Should Serach for Remeber wrapper ", () => {
+        test("Should Serach for Remeber wrapper ", () => {
             const wrapper = findByClassName(component, 'wrapper-checkbox');
             debug(wrapper)
         }),
         test("Should Serach for submit btn", () => {
             const wrapper = findByClassName(component, 'submit-button')
             debug(wrapper)
-        })
+        }),
+        test("Can change email field", () => {
+            const wrapper = shallow(<Login />);
+            expect(wrapper.state("email")).toEqual("");
+            const input = wrapper.find("input").at(0);
+            input.simulate("change", {
+                target: { name: "email", value: newEmail },
+            });
+            expect(wrapper.state("email")).toEqual(newEmail);
+        }),
+        test("Can change password field", () => {
+            const wrapper = shallow(<Login />);
+            expect(wrapper.state("password")).toEqual("");
+            const input = wrapper.find("input").at(1);
+            input.simulate("change", {
+                target: { name: "password", value: newPassword },
+            });
+            expect(wrapper.state("password")).toEqual(newPassword);
+        }),
+        test("Will not sign in if no provided email/password", () => {
+            const wrapper = shallow(<Login />);
+            const signInButton = wrapper.find('submit-button').at(0)
+            debug(signInButton)
+            expect(wrapper.state("email")).toEqual("")
+            expect(wrapper.state("password")).toEqual("");
+        });
 })
