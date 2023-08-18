@@ -74,5 +74,15 @@ describe("Render Login", () => {
             debug(signInButton)
             expect(wrapper.state("email")).toEqual("")
             expect(wrapper.state("password")).toEqual("");
+        }),
+        test("should not render", () => {
+            let component: any;
+            const newPassword = "testpassword";
+            beforeEach(() => {
+                component = setUp();
         });
+            test('componoent is not rendred ', () => {
+
+            })
+        })
 })

@@ -12,7 +12,7 @@ export class App extends Component {
       <div>
         <Routes>
           <Route path='login' element={< Login />} />
-          <Route path='counter' element={<Counter message={`The Count Value is `} />} />
+          <Route path='counter' element={<Counter message={`The Count Value is`} />} />
           <Route path='cake' element={<CakeContainer />} />
           <Route path='todoList' element={<ToDoClass />} />
           <Route path="increment" element={<IncrementDecrement />} />

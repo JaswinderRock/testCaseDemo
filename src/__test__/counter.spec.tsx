@@ -12,7 +12,7 @@ describe("Render Counter", () => {
     let component: any;
     beforeEach(() => {
         component = setUp();
-    });
+    }),
     test("Counter test is render ", () => {
         expect(component).toMatchSnapshot()
     }),
@@ -27,5 +27,20 @@ describe("Render Counter", () => {
         test("Should check for button ClassName ", () => {
             const wrapper = findByClassName(component, 'counterBtn')
             expect(wrapper.length).toBe(1)
+        }),
+        test("renders correctly with initial count", () => {
+            const labelText = findByTestAttr(component, 'label-text');
+            const expectedText = "The Count Value is  0";
+            const receivedText = labelText.find("h2").text().trim();
+            expect(receivedText).toContain(expectedText);
+        }),
+        it('click the counter button to increment the value ', () => {
+            const counterButton = findByTestAttr(component, 'counter-btn');
+            expect(counterButton.exists()).toBe(true);
+            counterButton.simulate('click');
+            const expectedText = "The Count Value is  1";
+            const labelText = findByTestAttr(component, 'label-text');
+            const receivedText = labelText.find("h2").text().trim();
+            expect(receivedText).toContain(expectedText);
         })
 })

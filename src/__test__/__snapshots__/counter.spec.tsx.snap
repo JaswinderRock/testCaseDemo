@@ -25,7 +25,9 @@ exports[`Render Counter Counter test is render  1`] = `
         }
       }
     >
-      <h2>
+      <h2
+        data-test="label-text"
+      >
         The Count Value is 
          
         0
@@ -33,7 +35,7 @@ exports[`Render Counter Counter test is render  1`] = `
     </div>
     <button
       className="counterBtn"
-      id="data-test-increment-btn"
+      data-test="counter-btn"
       onClick={[Function]}
       style={
         Object {

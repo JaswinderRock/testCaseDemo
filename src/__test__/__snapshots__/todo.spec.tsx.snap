@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render TodoClass TodoList test is render   1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(ToDoClass)>
+    <ToDoClass
+      reduxList={Array []}
+      setName={[Function]}
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "margin": "auto",
+            }
+          }
+        >
+          <h3
+            style={
+              Object {
+                "marginTop": "60px",
+              }
+            }
+          >
+            Hi i am todo
+          </h3>
+          <input
+            onChange={[Function]}
+            placeholder="enter your list value here! "
+            style={
+              Object {
+                "padding": "10px",
+              }
+            }
+            type="text"
+            value=""
+          />
+          <br />
+          <button
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "blue",
+                "borderRadius": "4px",
+                "color": "white",
+                "fontSize": "20px",
+                "height": 45,
+                "marginTop": "10px",
+                "width": 120,
+              }
+            }
+            type="button"
+          >
+            Submit
+          </button>
+          <br />
+        </div>
+      </div>
+    </ToDoClass>
+  </Connect(ToDoClass)>
+</Provider>
+`;

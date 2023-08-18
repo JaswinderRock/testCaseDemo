@@ -2,13 +2,17 @@ import React, { Component } from "react";
 import { increment, decrement } from "../Action/action";
 import '../css/increment.css';
 import { connect } from "react-redux";
+import { State } from "../Reducer/reducer";
 
-type IncrementProps = {
+type IncrementState = {
     count: number;
     increment: () => void;
     decrement: () => void;
 };
-class IncrementDecrement extends Component<IncrementProps> {
+type incrementProps = {
+    handleClick: () => void
+}
+class IncrementDecrement extends Component<IncrementState, incrementProps> {
     handleClick = () => {
         this.props.increment()
     }
@@ -18,15 +22,15 @@ class IncrementDecrement extends Component<IncrementProps> {
     render(): React.ReactNode {
     return (
         <div className="IncrementDecrement">
-            <h1>Count: {this.props.count}</h1>
-            <button style={{ background: 'blue', color: 'white', fontSize: '18px', borderRadius: '4px', padding: '8px' }} onClick={this.handleClick}>Increment</button>
-            <button style={{ background: 'blue', color: 'white', fontSize: '18px', marginLeft: '10px', borderRadius: '4px', padding: '8px' }} onClick={this.handleDecrement}>Decrement</button>
+            <h1 data-test="Count-Text" className="Count-Text">Count: {this.props.count}</h1>
+            <button data-test="increment-btn" className="Increment-btn" type="button" style={{ background: 'blue', color: 'white', fontSize: '18px', borderRadius: '4px', padding: '8px' }} onClick={this.handleClick}>Increment</button>
+            <button data-test="decrement-btn" className="decrement-btn" style={{ background: 'blue', color: 'white', fontSize: '18px', marginLeft: '10px', borderRadius: '4px', padding: '8px' }} onClick={this.handleDecrement}>Decrement</button>
         </div>
     );
     }
 };
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state: State) {
     return { count: state.count };
 }
 export default connect(mapStateToProps, { increment, decrement })(IncrementDecrement);

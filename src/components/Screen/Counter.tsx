@@ -18,9 +18,9 @@ export class Counter extends Component<CounterProps, CounterState> {
             <div className="counterwrapper" style={{ display: 'flex' }}>
                 <div style={{ margin: 'auto' }}>
                     <div data-test='counterdescription' className="counterdescription" style={{ marginTop: '30px' }}>
-                        <h2 >{this.props.message} {this.state.count}</h2> 
+                        <h2 data-test="label-text">{this.props.message} {this.state.count}</h2> 
                     </div>
-                    <button className="counterBtn" id={"data-test-increment-btn"} style={{ display: 'flex', margin: 'auto', borderRadius: '4px', marginTop: '10px', textAlign: 'center', color: "white", background: 'blue', padding: '10px', fontSize: '24px', }} onClick={this.handleClick}>Increment</button>
+                    <button data-test="counter-btn" className="counterBtn" style={{ display: 'flex', margin: 'auto', borderRadius: '4px', marginTop: '10px', textAlign: 'center', color: "white", background: 'blue', padding: '10px', fontSize: '24px', }} onClick={this.handleClick}>Increment</button>
                 </div>
             </div>
         )
