@@ -1,124 +1,126 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render Login Login test is render 1`] = `
-<div
-  className="wrapper-div"
-  style={
-    Object {
-      "display": "flex",
-    }
-  }
->
-  <form
-    className="login-form"
-    onSubmit={[Function]}
+<Login>
+  <div
+    className="wrapper-div"
     style={
       Object {
-        "background": "#dadada",
-        "border": "2px solid #0000FF ",
-        "color": "blue",
-        "margin": "auto",
-        "marginTop": "50px",
-        "padding": "40px",
+        "display": "flex",
       }
     }
   >
-    <h3
-      className="Login-label"
-      id="test-id-login"
+    <form
+      className="login-form"
+      onSubmit={[Function]}
       style={
         Object {
-          "fontSize": "24px",
+          "background": "#dadada",
+          "border": "2px solid #0000FF ",
+          "color": "blue",
+          "margin": "auto",
+          "marginTop": "50px",
+          "padding": "40px",
         }
       }
     >
-      Login
-    </h3>
-    <div
-      className="email-wrapper"
-    >
-      <label
+      <h3
+        className="Login-label"
+        id="test-id-login"
         style={
           Object {
-            "fontSize": "20px",
+            "fontSize": "24px",
           }
         }
       >
-        Email *
-      </label>
-      <br />
-      <input
-        className="email-input"
-        id="data-test-email"
-        onChange={[Function]}
-        placeholder="Please enter  your email"
-        style={
-          Object {
-            "height": "3vh",
-            "marginTop": "10px",
-          }
-        }
-        type="email"
-        value=""
-      />
-    </div>
-    <br />
-    <div>
-      <label
-        style={
-          Object {
-            "fontSize": "20px",
-          }
-        }
+        Login
+      </h3>
+      <div
+        className="email-wrapper"
       >
-        Password *
-      </label>
-      <br />
-      <input
-        className="password-input"
-        onChange={[Function]}
-        placeholder="Please enter your password"
-        style={
-          Object {
-            "height": "3vh",
-            "marginTop": "10px",
+        <label
+          style={
+            Object {
+              "fontSize": "20px",
+            }
           }
-        }
-        type="password"
-        value=""
-      />
-    </div>
-    <br />
-    <div
-      className="wrapper-checkbox"
-    >
-      <label>
+        >
+          Email *
+        </label>
+        <br />
         <input
-          checked={true}
+          className="email-input"
+          id="data-test-email"
           onChange={[Function]}
-          type="checkbox"
-        />
-        Remeber me ?
-      </label>
-    </div>
-    <br />
-    <div>
-      <button
-        className="submit-button"
-        style={
-          Object {
-            "background": "blue",
-            "color": "white",
-            "height": "5vh",
-            "marginTop": "16px",
-            "width": "60%",
+          placeholder="Please enter  your email"
+          style={
+            Object {
+              "height": "3vh",
+              "marginTop": "10px",
+            }
           }
-        }
-        type="submit"
+          type="email"
+          value=""
+        />
+      </div>
+      <br />
+      <div>
+        <label
+          style={
+            Object {
+              "fontSize": "20px",
+            }
+          }
+        >
+          Password *
+        </label>
+        <br />
+        <input
+          className="password-input"
+          onChange={[Function]}
+          placeholder="Please enter your password"
+          style={
+            Object {
+              "height": "3vh",
+              "marginTop": "10px",
+            }
+          }
+          type="password"
+          value=""
+        />
+      </div>
+      <br />
+      <div
+        className="wrapper-checkbox"
       >
-        Submit
-      </button>
-    </div>
-  </form>
-</div>
+        <label>
+          <input
+            checked={true}
+            onChange={[Function]}
+            type="checkbox"
+          />
+          Remeber me ?
+        </label>
+      </div>
+      <br />
+      <div>
+        <button
+          className="submit-button"
+          style={
+            Object {
+              "background": "blue",
+              "color": "white",
+              "height": "5vh",
+              "marginTop": "16px",
+              "width": "60%",
+            }
+          }
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</Login>
 `;

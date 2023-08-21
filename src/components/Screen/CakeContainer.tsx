@@ -12,8 +12,8 @@ class CakeContainer extends Component<CakeProps>{
         return (
             <div style={{ display: 'flex' }}>
                 <div style={{ margin: 'auto' }}>
-                    <h2>Number of Cakes {this.props.numOfCakes}</h2>
-                    <button style={{ display: 'flex', margin: 'auto', borderRadius: '4px', textAlign: 'center', color: "white", background: 'blue', padding: '10px', fontSize: '24px', }} onClick={this.props.buyCake}>Buy Cake</button>
+                    <h2 className="default-cake-count" data-test="default-cake-count">Number of Cakes {this.props.numOfCakes}</h2>
+                    <button data-test="test-buy-cake" style={{ display: 'flex', margin: 'auto', borderRadius: '4px', textAlign: 'center', color: "white", background: 'blue', padding: '10px', fontSize: '24px', }} onClick={this.props.buyCake}>Buy Cake</button>
                 </div>
             </div>
         )

@@ -1,31 +1,41 @@
 import React from 'react';
-import { shallow, ShallowWrapper } from 'enzyme';
+import { mount } from 'enzyme';
 import CakeContainer from '../components/Screen/CakeContainer';
 import { debug } from 'console';
 import { Provider } from 'react-redux';
 import { Store } from '../components/Store/store';
-import configureStore from 'redux-mock-store';
+import { findByClassName, findByTestAttr } from '../../Utils';
 
+const setUp = () => {
+    const component = mount(<Provider store={Store}>
+        <CakeContainer />
+    </Provider>);
+    return component;
+}
 
 describe("Render CakeContainer ", () => {
-    let wrapper: ShallowWrapper;
-    const mockStore = configureStore();
-    const store = mockStore({ numberOfCakes: 10 });
-
+    let component: any;
     beforeEach(() => {
-        wrapper = shallow(
-            <Provider store={store}>
-                <CakeContainer />
-            </Provider>
-        );
+        component = setUp();
     });
+
     test("CakeContainer Test", () => {
-        const Component = shallow(<CakeContainer />)
-        debug(Component);
-        expect(Component).toMatchSnapshot()
-    }),
-        test('should render with correct number of cakes', () => {
-            expect(wrapper.find('h2').text()).toEqual(`Number of Cakes ${10}`);
+        debug(component);
+        expect(component).toMatchSnapshot()
+    })
+
+    test('should render with correct number of cakes', () => {
+        const wrapper = findByClassName(component, 'default-cake-count');
+        expect(wrapper.length).toBe(1)
+        const expectedText = "Number of Cakes 10";
+        const receivedText = wrapper.text().trim();
+        expect(expectedText).toEqual(receivedText)
+    });
+    test('should call buyCake prop function when the Buy Cake button is clicked', () => {
+        const buyCake = findByTestAttr(component, 'test-buy-cake')
+        expect(buyCake.exists()).toBe(true);
+        buyCake.simulate('click');
+        expect(component.find('h2').text()).toContain(`Number of Cakes ${9}`);
         });
 
 })

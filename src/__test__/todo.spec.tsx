@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, shallow } from "enzyme"
+import { mount } from "enzyme"
 import ToDoClass from '../components/Screen/ToDoClass';
 import { Provider } from 'react-redux';
 import { Store } from '../components/Store/store';
@@ -17,8 +17,7 @@ describe("Render TodoClass", () => {
     beforeEach(() => {
         component = setUp();
     }),
-    test("TodoList test is render  ", () => {
-        const component = setUp()
+        test("TodoList test is render  ", () => {
         expect(component).toMatchSnapshot()
     })
     test('renders input and submit button', () => {
@@ -26,7 +25,6 @@ describe("Render TodoClass", () => {
         expect(wrapper.find('button[type="button"]'));
     })
     test('serach for label', () => {
-        const wrapper = setUp();
         expect(wrapper.find("h3").text()).toContain("Hi i am todo");
     })
 

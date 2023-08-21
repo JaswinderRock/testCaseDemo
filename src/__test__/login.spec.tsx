@@ -1,23 +1,22 @@
 import React from 'react';
-import { shallow } from "enzyme"
+import { mount } from "enzyme"
 import { debug } from 'console';
 import Login from '../components/Screen/Login';
 import { findByClassName } from '../../Utils/index';
 
 const setUp = () => {
-    const component = shallow(<Login />);
+    const component = mount(<Login />);
     return component;
 }
 describe("Render Login", () => {
     let component: any;
     const newEmail = "test@gmail.com";
     const newPassword = "testpassword";
-
+    const wrapper = setUp();
     beforeEach(() => {
         component = setUp();
     });
     test("Login test is render", () => {
-        const component = shallow(<Login />)
         debug(component)
         console.log(component.debug())
         expect(component).toMatchSnapshot()
@@ -51,7 +50,6 @@ describe("Render Login", () => {
             debug(wrapper)
         }),
         test("Can change email field", () => {
-            const wrapper = shallow(<Login />);
             expect(wrapper.state("email")).toEqual("");
             const input = wrapper.find("input").at(0);
             input.simulate("change", {
@@ -60,7 +58,6 @@ describe("Render Login", () => {
             expect(wrapper.state("email")).toEqual(newEmail);
         }),
         test("Can change password field", () => {
-            const wrapper = shallow(<Login />);
             expect(wrapper.state("password")).toEqual("");
             const input = wrapper.find("input").at(1);
             input.simulate("change", {
@@ -69,20 +66,9 @@ describe("Render Login", () => {
             expect(wrapper.state("password")).toEqual(newPassword);
         }),
         test("Will not sign in if no provided email/password", () => {
-            const wrapper = shallow(<Login />);
             const signInButton = wrapper.find('submit-button').at(0)
             debug(signInButton)
-            expect(wrapper.state("email")).toEqual("")
-            expect(wrapper.state("password")).toEqual("");
-        }),
-        test("should not render", () => {
-            let component: any;
-            const newPassword = "testpassword";
-            beforeEach(() => {
-                component = setUp();
-        });
-            test('componoent is not rendred ', () => {
-
-            })
+            expect(wrapper.state("email")).toEqual("test@gmail.com")
+            expect(wrapper.state("password")).toEqual("testpassword");
         })
 })

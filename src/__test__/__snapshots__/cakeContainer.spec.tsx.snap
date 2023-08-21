@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render CakeContainer  CakeContainer Test 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(CakeContainer)>
+    <CakeContainer
+      buyCake={[Function]}
+      numOfCakes={10}
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "margin": "auto",
+            }
+          }
+        >
+          <h2
+            className="default-cake-count"
+            data-test="default-cake-count"
+          >
+            Number of Cakes 
+            10
+          </h2>
+          <button
+            data-test="test-buy-cake"
+            onClick={[Function]}
+            style={
+              Object {
+                "background": "blue",
+                "borderRadius": "4px",
+                "color": "white",
+                "display": "flex",
+                "fontSize": "24px",
+                "margin": "auto",
+                "padding": "10px",
+                "textAlign": "center",
+              }
+            }
+          >
+            Buy Cake
+          </button>
+        </div>
+      </div>
+    </CakeContainer>
+  </Connect(CakeContainer)>
+</Provider>
+`;
